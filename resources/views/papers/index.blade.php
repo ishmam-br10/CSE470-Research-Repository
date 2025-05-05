@@ -22,13 +22,13 @@
                 <td class="p-2 text-center">{{ $paper->type }}</td>
                 <td class="p-2 text-center">{{ $paper->year }}</td>
                 <td class="p-2 text-center">{{ $paper->cited }}</td>
-                <td class="p-2">
+                <!-- <td class="p-2">
                     <a href="{{ route('papers.edit',$paper) }}" class="text-blue-600">Edit</a>
                     <form action="{{ route('papers.destroy',$paper) }}" method="POST" class="inline">
                         @csrf @method('DELETE')
                         <button class="text-red-600" onclick="return confirm('Delete?')">Delete</button>
                     </form>
-                </td>
+                </td> -->
             </tr>
         @endforeach
         </tbody>
