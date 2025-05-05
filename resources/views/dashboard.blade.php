@@ -13,19 +13,19 @@
         </div> -->
 
         <div class="absolute inset-0 z-0">
-    <!-- background video -->
-    <video
-        src="{{ asset('images/bracu-new.mp4') }}"
-        class="w-full h-full object-cover pointer-events-none"
-        autoplay
-        muted
-        loop
-        playsinline>
-    </video>
+            <!-- background video -->
+            <video
+                src="{{ asset('images/bracu-new.mp4') }}"
+                class="w-full h-full object-cover pointer-events-none"
+                autoplay
+                muted
+                loop
+                playsinline>
+            </video>
 
-    <!-- black overlay @ 20 % -->
-    <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
-</div>
+            <!-- black overlay @ 20 % -->
+            <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
+        </div>
 
 
         <!-- Content -->

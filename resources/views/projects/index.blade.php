@@ -48,20 +48,23 @@
                     @else
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             @foreach($projects as $project)
-                                <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                                <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
                                     <div class="p-5 border-b">
-                                        <h3 class="text-lg font-semibold text-gray-800 truncate">
-                                            <a href="{{ route('projects.show', $project) }}" class="hover:text-blue-600">
-                                                {{ $project->title }}
-                                            </a>
-                                        </h3>
-                                        @if(Auth::check() && $project->isOwnedBy(Auth::user()) && $project->applications->where('status', 'pending')->count() > 0)
-                                            <a href="{{ route('projects.applications.index', $project) }}" class="flex items-center justify-center bg-red-100 text-red-700 rounded-full px-2 py-1 text-xs font-semibold">
-                                                {{ $project->applications->where('status', 'pending')->count() }} new
-                                            </a>
-                                        @endif
+                                        <div class="flex items-start justify-between">
+                                            <h3 class="text-lg font-semibold text-gray-800 truncate">
+                                                <a href="{{ route('projects.show', $project) }}" class="hover:text-blue-600">
+                                                    {{ $project->title }}
+                                                </a>
+                                            </h3>
+                                            
+                                            @if(Auth::check() && $project->isOwnedBy(Auth::user()) && $project->applications->where('status', 'pending')->count() > 0)
+                                                <a href="{{ route('projects.applications.index', $project) }}" class="ml-2 flex-shrink-0 bg-red-100 text-red-700 rounded-full px-2 py-1 text-xs font-semibold">
+                                                    {{ $project->applications->where('status', 'pending')->count() }} new
+                                                </a>
+                                            @endif
                                         </div>
-                                        <div class="flex items-center mt-1 text-sm text-gray-600">
+                                        
+                                        <div class="flex items-center mt-2 text-sm text-gray-600">
                                             <span class="inline-flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -77,9 +80,13 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="p-5">
+                                    
+                                    <div class="p-5 flex-grow">
                                         <p class="text-gray-600 line-clamp-3 mb-4 text-sm">{{ Str::limit($project->description, 150) }}</p>
-                                        <div class="flex justify-between items-center pt-2">
+                                    </div>
+                                    
+                                    <div class="px-5 pb-5 pt-2 border-t">
+                                        <div class="flex justify-between items-center">
                                             <span class="{{ 
                                                 $project->status === 'ongoing' ? 'bg-green-100 text-green-800' : 
                                                 ($project->status === 'completed' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800') 
@@ -100,6 +107,13 @@
                     @endif
                 </div>
             </div>
+            
+            <!-- Fixed pagination section -->
+            @if(method_exists($projects, 'links'))
+                <div class="mt-4">
+                    {{ $projects->links() }}
+                </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
