@@ -35,9 +35,9 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Contact
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Actions
-                                </th>
+                                </th> -->
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -65,7 +65,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{ $researcher->contact }}</div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <!-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <a href="{{ route('researchers.show', $researcher) }}" class="text-blue-600 hover:text-blue-900 mr-2">View</a>
                                         <a href="{{ route('researchers.edit', $researcher) }}" class="text-indigo-600 hover:text-indigo-900 mr-2">Edit</a>
                                         <form action="{{ route('researchers.destroy', $researcher) }}" method="POST" class="inline-block">
@@ -73,7 +73,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Are you sure you want to delete this researcher?')">Delete</button>
                                         </form>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             @empty
                                 <tr>

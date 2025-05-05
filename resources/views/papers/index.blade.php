@@ -12,7 +12,7 @@
                 <th class="p-2">Type</th>
                 <th class="p-2">Year</th>
                 <th class="p-2">Citations</th>
-                <th class="p-2">Actions</th>
+                <!-- <th class="p-2">Actions</th> -->
             </tr>
         </thead>
         <tbody>
