@@ -57,6 +57,23 @@
                             @endif
                         @endif
                     @endauth
+                    <!-- Find the navigation links section and add: -->
+                    <!-- @if(Auth::user()->isAdmin())
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.*')">
+                                {{ __('Admin Page') }}
+                            </x-nav-link>
+                        </div>
+                    @endif -->
+                    
+                    <!-- Also find the responsive menu section (for mobile) and add: -->
+                    @if(Auth::user()->isAdmin())
+                        <div class="pt-2 pb-3 space-y-1">
+                            <x-responsive-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.*')">
+                                {{ __('Admin Page') }}
+                            </x-responsive-nav-link>
+                        </div>
+                    @endif
                 </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

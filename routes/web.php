@@ -20,7 +20,18 @@ use App\Http\Controllers\SearchController;
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
+// Add these routes to your web.php file
+use App\Http\Controllers\AdminController;
 
+// Admin routes
+Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::get('/users', [AdminController::class, 'users'])->name('users');
+    Route::get('/papers', [AdminController::class, 'papers'])->name('papers');
+    Route::get('/papers/{paper}/edit', [AdminController::class, 'editPaper'])->name('papers.edit');
+    Route::put('/papers/{paper}', [AdminController::class, 'updatePaper'])->name('papers.update');
+    Route::delete('/papers/{paper}', [AdminController::class, 'destroyPaper'])->name('papers.destroy');
+});
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/about', function() {return view('about');})->name('about');
