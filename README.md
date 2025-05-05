@@ -1,5 +1,7 @@
 # BRACU Research Repository — Laravel Edition (Patch)
 
+[Demonstration Video for the Full Project](https://drive.google.com/drive/folders/14txPoOPVSpPDhjxw53NXhYe_WOGWYLKD?usp=sharing)
+
 This archive contains **only the application code** (models, migrations, controllers, Blade templates, routes, seeders)
 needed to replicate the features of your legacy PHP research repository in Laravel 11.
 
