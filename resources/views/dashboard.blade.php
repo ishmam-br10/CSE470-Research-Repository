@@ -1,16 +1,32 @@
 <x-app-layout>
     <div class="relative min-h-screen">
         <!-- Hero Background Video -->
-        <div class="absolute inset-0 z-0">
+        <!-- <div class="absolute inset-0 z-0">
             <video
                 src="{{ asset('images/bracu-new.mp4') }}"
-                class="w-full h-full object-cover opacity-80 pointer-events-none"
+                class="w-full h-full object-cover opacity-100 pointer-events-none"
                 autoplay
                 muted
                 loop
                 playsinline
             ></video>
-        </div>
+        </div> -->
+
+        <div class="absolute inset-0 z-0">
+    <!-- background video -->
+    <video
+        src="{{ asset('images/bracu-new.mp4') }}"
+        class="w-full h-full object-cover pointer-events-none"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
+
+    <!-- black overlay @ 20 % -->
+    <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
+</div>
+
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
