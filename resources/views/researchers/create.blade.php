@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <x-label for="department" :value="__('Department')" />
+                            <x-label for="department" :value="__('Department and University')" />
                             <x-input id="department" class="block mt-1 w-full" type="text" name="department" :value="old('department')" required />
                             @error('department')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
