@@ -44,8 +44,8 @@
                             @forelse ($researchers as $researcher)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        @if($researcher->avatar)
-                                            <img src="{{ Storage::url($researcher->avatar) }}" alt="{{ $researcher->name }}" class="h-10 w-10 rounded-full">
+                                        @if($researcher->avatar_path)
+                                            <img src="{{ Storage::url($researcher->avatar_path) }}" alt="{{ $researcher->name }}" class="h-10 w-10 rounded-full">
                                         @else
                                             <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700">
                                                 {{ substr($researcher->name, 0, 1) }}
